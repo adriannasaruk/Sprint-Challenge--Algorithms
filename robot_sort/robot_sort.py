@@ -97,12 +97,37 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
+        #while you can move right
         while self.can_move_right():
-            self.set_light_on()
+            #move right
             self.move_right()
-            self.compare_item()
-            self.set_light_off()
-            self.swap_item()
+            #if move right returns true
+            if self.move_right() == True:
+                #compare items
+                self.compare_item()
+                #if it returns 1
+                if self.compare_item() == 1:
+                #swap them
+                    self.swap_item()
+                #otherwise go right again
+            else:
+                self.move_right
+
+        while self.can_move_left():
+            #move right
+            self.move_left()
+            #if move right returns true
+            if self.move_left() == True:
+                #compare items
+                self.compare_item()
+                #if it returns 1
+                if self.compare_item() == -1:
+                #swap them
+                    self.swap_item()
+                #otherwise go right again
+            else:
+                self.move_left
+                
         return self
         
 
